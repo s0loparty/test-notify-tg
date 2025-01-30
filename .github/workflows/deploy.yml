@@ -25,7 +25,8 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          message: "✅ Сборка успешна! 🎉"
+          message: "✅ Сборка успешна! 🎉 \n🔗 [Коммит](${{ github.event.head_commit.url }})"
+          parse_mode: markdown
 
       - name: Notify on failure
         if: failure()
@@ -33,4 +34,5 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          message: "❌ Ошибка сборки! Проверьте логи. 😭"
+          message: "❌ Ошибка сборки! Проверьте логи. \n🔗 [Коммит](${{ github.event.head_commit.url }})"
+          parse_mode: markdown
