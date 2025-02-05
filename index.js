@@ -1,1 +1,1 @@
-console.log('kek123')
+console.log('kek1')
