@@ -21,10 +21,11 @@ jobs:
 
       - name: Notify on success
         if: success()
-        uses: appleboy/telegram-action@master
+        #uses: appleboy/telegram-action@master
+        uses: EverythingSuckz/github-telegram-notify@v1.1.2
         with:
-          to: ${{ secrets.TELEGRAM_CHAT_ID }}
-          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
+          bot_token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           message: |
             "✅ Сборка успешна! 🎉 \n🔗 [Коммит](${{ github.event.head_commit.url }})"
           parse_mode: "markdown"
