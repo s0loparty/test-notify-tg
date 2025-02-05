@@ -27,7 +27,7 @@ jobs:
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           message: |
             "✅ Сборка успешна! 🎉 \n🔗 [Коммит](${{ github.event.head_commit.url }})"
-          parse_mode: markdown
+          parse_mode: "markdown"
 
       - name: Notify on failure
         if: failure()
@@ -37,4 +37,4 @@ jobs:
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           message: |
             "❌ Ошибка сборки! Проверьте логи. \n🔗 [Коммит](${{ github.event.head_commit.url }})"
-          parse_mode: markdown
+          parse_mode: "markdown"
